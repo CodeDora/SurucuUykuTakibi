@@ -5,17 +5,15 @@ from imutils import face_utils
 import time
 import pygame
 
-# en stabil çalıan kod satırları burdan ulaş
-
 cap=cv2.VideoCapture(0)
 detector=dlib.get_frontal_face_detector()
-predictor=dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
+predictor=dlib.shape_predictor("shape_predictor_68_face_landmarks.dat") # önceden eğitilmiş yüz datasını eklemeyi unutmayın. aynı isim aratmasıyla indirebilirsin.
 sleep=0
-active=0
+active=0   
 status=""
 color=(0,0,0)
 pygame.mixer.init()
-pygame.mixer.music.load("ses.mp3")  
+pygame.mixer.music.load("ses.mp3")  #kendinize ait ses dosyasını eklemeyi unutmayın
 
 def compute(ptA,ptB):
     return np.linalg.norm(ptA - ptB)
@@ -77,3 +75,5 @@ while True:
 cap.release()
 cv2.destroyAllWindows()
 pygame.mixer.quit()
+
+# en son düzenlediğin hali ibrahim
